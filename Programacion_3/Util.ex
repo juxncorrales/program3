@@ -28,14 +28,4 @@ defmodule Util do
       |>ingresar(:real)
 
     end
-
-  def ingresar_texto(mensaje) do
-    mensaje
-    |> IO.gets()
-    |> String.trim()
-  end
-
-  def generar_mensaje(nombre) do
-    "Bienvenido #{nombre} a la empresa Once Ltda"
-  end
 end
