@@ -26,7 +26,7 @@ defmodule PreParcial6 do
       tipo == "Carro" -> 10000
       tipo == "Moto" -> 5000
       tipo == "Camion" -> 20000+(2000*peso)
-
+      true -> "Tipo de vehículo no válido"
     end
   end
 
