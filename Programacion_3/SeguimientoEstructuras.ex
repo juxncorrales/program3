@@ -18,24 +18,24 @@ defmodule SeguimientoEstructuras do
   #******************************************************************************
 
   defp mostrar_ejercicios_con_listas() do
-    IO.puts("*********************")
+    IO.puts("\n*********************")
     IO.puts("Ejercicios con Listas")
-    IO.puts("*********************\n")
-    IO.puts("********************")
+    IO.puts("*********************")
+    IO.puts("\n********************")
     IO.puts("1. Suma de elementos")
-    IO.puts("********************")
+    IO.puts("********************\n")
     suma_de_elementos()
-    IO.puts("************************")
+    IO.puts("\n************************")
     IO.puts("2. Filtrar numeros pares")
-    IO.puts("************************")
+    IO.puts("************************\n")
     filtrar_numeros_pares()
-    IO.puts("**********************************")
+    IO.puts("\n**********************************")
     IO.puts("3. Multiplicar cada elemento por 3")
-    IO.puts("**********************************")
+    IO.puts("**********************************\n")
     multiplicar_cada_elemento_por_3()
-    IO.puts("********************")
+    IO.puts("\n********************")
     IO.puts("4. Concatenar listas")
-    IO.puts("********************")
+    IO.puts("********************\n")
     concatenar_listas()
   end
 
@@ -75,24 +75,24 @@ defmodule SeguimientoEstructuras do
   #******************************************************************************
 
   defp mostrar_ejercicios_con_tuplas() do
-    IO.puts("*********************")
+    IO.puts("\n*********************")
     IO.puts("Ejercicios con Tuplas")
-    IO.puts("*********************\n")
-    IO.puts("******************")
+    IO.puts("*********************")
+    IO.puts("\n******************")
     IO.puts("1. Extraer valores")
-    IO.puts("******************")
+    IO.puts("******************\n")
     extraer_valores()
-    IO.puts("*************************")
+    IO.puts("\n*************************")
     IO.puts("2. Intercambiar elementos")
-    IO.puts("*************************")
+    IO.puts("*************************\n")
     intercambiar_elementos({"hola", "mundo"})
-    IO.puts("*********************")
+    IO.puts("\n*********************")
     IO.puts("3. Actualizar valores")
-    IO.puts("*********************")
+    IO.puts("*********************\n")
     actualizar_valores()
-    IO.puts("****************************")
+    IO.puts("\n****************************")
     IO.puts("4. Tupla dentro de una lista")
-    IO.puts("****************************")
+    IO.puts("****************************\n")
     tupla_dentro_de_una_lista()
   end
 
@@ -136,17 +136,21 @@ defmodule SeguimientoEstructuras do
   #******************************************************************************
 
   defp mostrar_ejercicios_con_listas_de_palabras_clave() do
-    IO.puts("***************************************")
+    IO.puts("\n***************************************")
     IO.puts("Ejercicios con Listas de Palabras Clave")
-    IO.puts("***************************************\n")
-    IO.puts("*********************")
+    IO.puts("***************************************")
+    IO.puts("\n*********************")
     IO.puts("1. Acceder a un valor")
-    IO.puts("*********************")
+    IO.puts("*********************\n")
     acceder_a_un_valor()
-    IO.puts("**********************")
-    IO.puts("1. Actualizar un valor")
-    IO.puts("**********************")
+    IO.puts("\n**********************")
+    IO.puts("2. Actualizar un valor")
+    IO.puts("**********************\n")
     actualizar_un_valor()
+    IO.puts("\n********************")
+    IO.puts("3. Convertrir a mapa")
+    IO.puts("********************\n")
+    convertir_a_mapa()
   end
 
   # 1. Dada la lista [modo: :rapido, tiempo: 10, activo: true], obtén el valor de :tiempo.
@@ -164,10 +168,72 @@ defmodule SeguimientoEstructuras do
     IO.inspect(nueva_lista)
   end
 
-  defp mostrar_ejercicios_con_mapas() do
+  # 3. Transforma [nombre: "Pepito", edad: 30, ciudad: "Bogotá"] en un mapa.
 
+  defp convertir_a_mapa() do
+    lista = [nombre: "Pepito", edad: 30, ciudad: "Bogotá"]
+    mapa = Map.new(lista)
+    IO.inspect(mapa)
+  end
+
+  #******************************************************************************
+  #                           Ejercicios con Mapas
+  #******************************************************************************
+
+  defp mostrar_ejercicios_con_mapas() do
+    IO.puts("\n********************")
+    IO.puts("Ejercicios con Mapas")
+    IO.puts("********************")
+    IO.puts("\n********************")
+    IO.puts("1. Agregar una clave")
+    IO.puts("********************\n")
+    agregar_una_clave()
+    IO.puts("\n*********************")
+    IO.puts("2. Actualizar valores")
+    IO.puts("*********************\n")
+    actualizar_valores_mapas()
+    IO.puts("\n*********************")
+    IO.puts("3. Acceder a un valor")
+    IO.puts("*********************\n")
+    acceder_a_un_valor_mapas()
+    IO.puts("\n*********************")
+    IO.puts("4. Fusionar dos mapas")
+    IO.puts("*********************\n")
+    fusionar_dos_mapas()
+  end
+
+  # 1. Dado %{nombre: "Pepito", edad: 30}, agrega ciudad: "Bogotá".
+
+  defp agregar_una_clave() do
+    mapa = %{nombre: "Pepito", edad: 30}
+    mapa_nuevo = Map.put(mapa,:ciudad,"Bogotá")
+    IO.inspect(mapa_nuevo)
+  end
+
+  # 2. Dado %{nombre: "Pepito", edad: 30}, incrementa edad en 1 usando Map.update/3.
+
+  defp actualizar_valores_mapas() do
+    mapa = %{nombre: "Pepito", edad: 30}
+    mapa = Map.update(mapa,:edad,31, fn edad -> edad + 1 end)
+    IO.inspect(mapa)
+  end
+
+  # 3. Extrae el valor de :nombre en %{nombre: "Pepito", ciudad: "Bogotá"}.
+
+  defp acceder_a_un_valor_mapas() do
+    mapa = %{nombre: "Pepito", ciudad: "Bogotá"}
+    Map.get(mapa,:nombre)
+    |>IO.inspect()
+  end
+
+  # 4. Une %{nombre: "Pepito"} con %{edad: 30, ciudad: "Bogotá"}.
+
+  defp fusionar_dos_mapas() do
+    mapa_1 = %{nombre: "Pepito"}
+    mapa_2 = %{edad: 30, ciudad: "Bogotá"}
+    mapa_nuevo = Map.merge(mapa_1,mapa_2)
+    IO.inspect(mapa_nuevo)
   end
 end
-
 
 SeguimientoEstructuras.main()
