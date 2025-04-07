@@ -37,9 +37,11 @@ defmodule SeguimientoEstructuras do
     IO.puts("4. Concatenar listas")
     IO.puts("********************\n")
     concatenar_listas()
+    IO.puts(" \n")
   end
 
-  # 1. Escribe una función que sume todos los elementos de una lista.
+  # 1. Escribe una función que sume
+  # todos los elementos de una lista.
 
   defp suma_de_elementos() do
     lista = [1,2,3,4,5]
@@ -47,14 +49,16 @@ defmodule SeguimientoEstructuras do
     |>IO.puts()
   end
 
-  # 2. Escribe una función que reciba una lista de números y retorne solo los pares.
+  # 2. Escribe una función que reciba una
+  # lista de números y retorne solo los pares.
 
   defp filtrar_numeros_pares() do
     lista = [1,2,3,4,5,6,7,8,9,10]
     Enum.map(lista,fn x -> if rem(x, 2) == 0 do IO.puts(x)end end)
   end
 
-  # 3. Escribe una función que multiplique cada elemento de una lista por 3 usando
+  # 3. Escribe una función que multiplique
+  # cada elemento de una lista por 3 usando
 
   defp multiplicar_cada_elemento_por_3() do
     lista = [1,2,3,4,5]
@@ -94,9 +98,11 @@ defmodule SeguimientoEstructuras do
     IO.puts("4. Tupla dentro de una lista")
     IO.puts("****************************\n")
     tupla_dentro_de_una_lista()
+    IO.puts(" \n")
   end
 
-  # 1. Dada la tupla {:ok, "Exito", 200}, extrae y muestra cada elemento por separado.
+  # 1. Dada la tupla {:ok, "Exito", 200},
+  # extrae y muestra cada elemento por separado.
 
   defp extraer_valores()do
     tupla = {:ok, "Éxito", 200}
@@ -110,7 +116,6 @@ defmodule SeguimientoEstructuras do
   defp intercambiar_elementos({a,b}) do
     {b,a}
     |>IO.inspect()
-
   end
 
   # 3. Dada la tupla {"Pepito", 30, "Bogotá"}, cambia la edad a 31.
@@ -151,9 +156,11 @@ defmodule SeguimientoEstructuras do
     IO.puts("3. Convertrir a mapa")
     IO.puts("********************\n")
     convertir_a_mapa()
+    IO.puts(" \n")
   end
 
-  # 1. Dada la lista [modo: :rapido, tiempo: 10, activo: true], obtén el valor de :tiempo.
+  # 1. Dada la lista [modo: :rapido, tiempo: 10, activo: true],
+  # obtén el valor de :tiempo.
 
   defp acceder_a_un_valor() do
     lista = [modo: :rapido, tiempo: 10, activo: true]
@@ -200,9 +207,11 @@ defmodule SeguimientoEstructuras do
     IO.puts("4. Fusionar dos mapas")
     IO.puts("*********************\n")
     fusionar_dos_mapas()
+    IO.puts(" \n")
   end
 
-  # 1. Dado %{nombre: "Pepito", edad: 30}, agrega ciudad: "Bogotá".
+  # 1. Dado %{nombre: "Pepito", edad: 30},
+  # agrega ciudad: "Bogotá".
 
   defp agregar_una_clave() do
     mapa = %{nombre: "Pepito", edad: 30}
@@ -210,7 +219,8 @@ defmodule SeguimientoEstructuras do
     IO.inspect(mapa_nuevo)
   end
 
-  # 2. Dado %{nombre: "Pepito", edad: 30}, incrementa edad en 1 usando Map.update/3.
+  # 2. Dado %{nombre: "Pepito", edad: 30},
+  # incrementa edad en 1 usando Map.update/3.
 
   defp actualizar_valores_mapas() do
     mapa = %{nombre: "Pepito", edad: 30}
@@ -218,7 +228,8 @@ defmodule SeguimientoEstructuras do
     IO.inspect(mapa)
   end
 
-  # 3. Extrae el valor de :nombre en %{nombre: "Pepito", ciudad: "Bogotá"}.
+  # 3. Extrae el valor de :nombre en
+  # %{nombre: "Pepito", ciudad: "Bogotá"}.
 
   defp acceder_a_un_valor_mapas() do
     mapa = %{nombre: "Pepito", ciudad: "Bogotá"}
@@ -226,7 +237,8 @@ defmodule SeguimientoEstructuras do
     |>IO.inspect()
   end
 
-  # 4. Une %{nombre: "Pepito"} con %{edad: 30, ciudad: "Bogotá"}.
+  # 4. Une %{nombre: "Pepito"} con
+  # %{edad: 30, ciudad: "Bogotá"}.
 
   defp fusionar_dos_mapas() do
     mapa_1 = %{nombre: "Pepito"}
