@@ -23,9 +23,16 @@ defmodule Util do
     ArgumentError->
       "error, se espera que ingrese un numero real\n"
       |> mostrar_mensaje()
-
       mensaje
       |>ingresar(:real)
+  end
 
-    end
+  def ingresar(mensaje, :boolean) do
+    valor =
+      mensaje
+      |>ingresar(:texto)
+      |>String.downcase()
+
+    Enum.member?(["si","sí","s"],valor)
+  end
 end
