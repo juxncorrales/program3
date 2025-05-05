@@ -3,6 +3,10 @@ defmodule Util do
     IO.puts("#{mensaje}")
   end
 
+  def mostrar_error(mensaje) do
+    IO.puts("#{mensaje}")
+  end
+
   def ingresar(mensaje,:texto) do
     mensaje
     |>IO.gets()
@@ -13,6 +17,12 @@ defmodule Util do
     mensaje
     |>Util.ingresar(:texto)
     |>String.to_integer()
+  rescue
+    ArgumentError->
+      "error, se espera que ingrese un numero entero\n"
+      |> mostrar_mensaje()
+      mensaje
+      |>ingresar(:entero)
   end
 
   def ingresar(mensaje,:real) do
